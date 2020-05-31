@@ -5,6 +5,12 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
+var str1 = "This is a list of items: cherries, limes, oranges, apples."
+var start = str1.indexOf(":")
+var end = str1.indexOf(".", start+1)
+var substring = str1.substring(start+1,end)
+var array = substring.split(",")
+console.log(array)
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -13,6 +19,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
+          Sample String - <b>{str1}</b> and String length is <b>{str1.length}</b> <br/>
           Hello, I’m <strong>Shu</strong>. I’m a software engineer and a
           translator (English/Japanese). You can contact me on{' '}
           <a href="https://twitter.com/chibicode">Twitter</a>.
